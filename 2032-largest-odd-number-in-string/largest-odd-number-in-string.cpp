@@ -1,12 +1,16 @@
 class Solution {
 public:
-    string largestOddNumber(string num) {
-        if (num.back() % 2 == 1) return num;
-        int i = num.length() - 1;
-        while (i >= 0) {
-            int n = num[i];
-            if (n % 2 == 1) return num.substr(0, i + 1);
-            i--;
+    string largestOddNumber(string nums) {
+        
+        while(nums.size()!= 0){
+            int n = nums.size();
+            int i = nums[n-1] - '0';
+            if(i %2==1){
+                return nums;
+            }
+            else{
+                nums.erase(n-1, 1);
+            }
         }
         return "";
     }
